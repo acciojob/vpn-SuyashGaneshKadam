@@ -13,8 +13,10 @@ public class User {
     private String username;
     private String password;
     private String originalIp;
-    private String duplicateIp;
+    private String maskedIp;
     private Boolean connected;
+
+    private String originalCountry;
     @OneToOne
     @JoinColumn
     private Country country;
@@ -27,12 +29,29 @@ public class User {
     public User() {
     }
 
-    public User(String username, String password, String originalIp, String duplicateIp, Boolean connected) {
+    public User(String username, String password, String originalIp, String maskedIp, Boolean connected, String originalCountry) {
         this.username = username;
         this.password = password;
         this.originalIp = originalIp;
-        this.duplicateIp = duplicateIp;
+        this.maskedIp = maskedIp;
         this.connected = connected;
+        this.originalCountry = originalCountry;
+    }
+
+    public String getMaskedIp() {
+        return maskedIp;
+    }
+
+    public void setMaskedIp(String maskedIp) {
+        this.maskedIp = maskedIp;
+    }
+
+    public String getOriginalCountry() {
+        return originalCountry;
+    }
+
+    public void setOriginalCountry(String originalCountry) {
+        this.originalCountry = originalCountry;
     }
 
     public Integer getId() {
@@ -65,14 +84,6 @@ public class User {
 
     public void setOriginalIp(String originalIp) {
         this.originalIp = originalIp;
-    }
-
-    public String getDuplicateIp() {
-        return duplicateIp;
-    }
-
-    public void setDuplicateIp(String duplicateIp) {
-        this.duplicateIp = duplicateIp;
     }
 
     public Boolean getConnected() {
