@@ -6,6 +6,7 @@ import com.driver.repository.UserRepository;
 import com.driver.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import com.driver.model.*;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -19,11 +20,11 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User register(String username, String password, String countryName) throws Exception{
-
+        return null;
     }
 
     @Override
     public User subscribe(Integer userId, Integer serviceProviderId) {
-
+        return null;
     }
 }
